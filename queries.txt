@@ -48,3 +48,10 @@ FROM `departments`;
 SELECT COUNT(*)
 FROM `teachers`
 WHERE `phone` IS NULL;
+
+//// HAVING ////
+SELECT COUNT(+) AS `courses_number`, `cfu`
+FROM `courses`
+WHERE `cfu` > 5
+GROUP BY `cfu` 
+HAVING `courses_number` > 100; // HAVING serve a Selezionare una colonna creata come query, ma non realmente presente nel DB (come courses_number)
